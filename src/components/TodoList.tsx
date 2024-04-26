@@ -29,7 +29,7 @@ const TodoList = () => {
   return (
     <div className="flex flex-col gap-1">
       {todoList.map((todo: Todo) => {
-        return <TodoItem {...todo} />;
+        return <TodoItem {...todo} key={todo.id} />;
       })}
     </div>
   );
