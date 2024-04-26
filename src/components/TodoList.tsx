@@ -15,9 +15,6 @@ const TodoList = () => {
     dispatch(fetchTodo() as any);
   }, [dispatch]);
 
-  console.log(todoList);
-  console.log(status);
-  console.log(error);
   if (status === "loading") {
     return <div>Loading...</div>;
   }
@@ -27,7 +24,7 @@ const TodoList = () => {
   }
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-3">
       {todoList.map((todo: Todo) => {
         return <TodoItem {...todo} key={todo.id} />;
       })}

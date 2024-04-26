@@ -8,16 +8,19 @@ const TodoItem: React.FC<Todo> = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <div className="inline-block mr-2 border border-solid border-blue-600 border-r w-56">
+    <div className="flex justify-center items-center gap-2">
+      <div className="inline-block mr-2 rounded shadow-lg p-1 overflow-hidden text-xl">
         {title}
       </div>
-      <div className="inline-block mr-2 border border-solid border-blue-600 border-r font-bold">
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         UPDATE
-      </div>
-      <div className="font-bold" onClick={() => dispatch(deleteTodo(id))}>
+      </button>
+      <button
+        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => dispatch(deleteTodo(id))}
+      >
         DELETE
-      </div>
+      </button>
     </div>
   );
 };
